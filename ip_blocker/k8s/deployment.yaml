@@ -1,7 +1,29 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: crazy-server  
+#   namespace: trialnamespace
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: crazy-server
+#   template:
+#     metadata:
+#       labels:
+#         app: crazy-server
+#     spec:
+#       imagePullSecrets:
+#       - name: test1  
+#       containers:
+#       - name: crazy-server
+#         image: marcuskimathi/crazy-server:latest
+#         ports:
+#         - containerPort: 3000
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: crazy-server  
+  name: crazy-server
   namespace: trialnamespace
 spec:
   replicas: 1
@@ -14,9 +36,9 @@ spec:
         app: crazy-server
     spec:
       imagePullSecrets:
-      - name: test1  
+        - name: test1
       containers:
-      - name: crazy-server
-        image: marcuskimathi/crazy-server:latest
-        ports:
-        - containerPort: 3000
+        - name: crazy-server
+          image: marcuskimathi/crazy-server:latest
+          ports:
+            - containerPort: 3000

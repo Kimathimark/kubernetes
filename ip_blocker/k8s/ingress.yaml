@@ -7,13 +7,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: crazy.local
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: crazy-server-service
-            port:
-              number: 80
+    - host: crazy.local  # This is the domain you will use in the browser
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: crazy-server-service  # Ensure this matches the name of your service
+                port:
+                  number: 80  # This should be the same as the exposed port on your service
