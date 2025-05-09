@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: crazy-server
+  name: crazy-server  
   namespace: trialnamespace
 spec:
   replicas: 1
@@ -14,9 +14,9 @@ spec:
         app: crazy-server
     spec:
       imagePullSecrets:
-      - name: test1  # Updated to match your created secret name
+      - name: test1  
       containers:
       - name: crazy-server
-        image: marcuskimathi/crazy-server:latest  # Updated to use your Docker Hub username/repository
+        image: marcuskimathi/crazy-server:latest
         ports:
         - containerPort: 3000
